@@ -58,7 +58,7 @@ var retryingTransport = &ResilientTransport{
 		return time.Now().Add(5 * time.Second)
 	},
 	DialTimeout: 10 * time.Second,
-	MaxTries:    3,
+	MaxTries:    10,
 	ShouldRetry: awsRetry,
 	Wait:        ExpBackoff,
 }
